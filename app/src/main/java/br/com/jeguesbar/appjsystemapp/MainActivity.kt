@@ -15,7 +15,7 @@ class MainActivity : DebugActivity() {
 
         // encontra objeto pelo id
         val imagem = findViewById<ImageView>(R.id.campo_imagem)
-        imagem.setImageResource(R.drawable.imagem_login)
+        imagem.setImageResource(R.drawable.apresentacao_jegues_bar_system)
 
         val texto = findViewById<TextView>(R.id.texto_login)
         texto.text = getString(R.string.mensagem_login)
@@ -44,21 +44,26 @@ class MainActivity : DebugActivity() {
         val valorSenha = campoSenha.text.toString()
         //Toast.makeText(context, "$valorUsuario : $valorSenha", Toast.LENGTH_LONG).show()
 
-        // criar intent
-        val intent = Intent(context, TelaInicialActivity::class.java)
-        // colocar parâmetros (opcional)
-        val params = Bundle()
-        params.putString("nome", "Jegues Bar")
-        intent.putExtras(params)
+        if (campoUsuario.text.toString()=="Jegues"&& campoSenha.text.toString()=="Bar"){
 
-        // enviar parâmetros simplificado
-        intent.putExtra("numero", 10)
+            // criar intent
+            val intent = Intent(context, TelaInicialActivity::class.java)
+            // colocar parâmetros (opcional)
+            val params = Bundle()
+            params.putString("nome", "Jegues Bar")
+            intent.putExtras(params)
 
-        // fazer a chamada
-        //startActivity(intent)
+            // enviar parâmetros simplificado
+            intent.putExtra("numero", 10)
 
-        // fazer a chamada esperando resultado
-        startActivityForResult(intent, 1)
+            // fazer a chamada
+            //startActivity(intent)
+
+            // fazer a chamada esperando resultado
+            startActivityForResult(intent, 1)
+        }else{
+            Toast.makeText(this, "Usuário ou senha incorreto", Toast.LENGTH_SHORT).show()
+        }
 
     }
 

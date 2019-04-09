@@ -2,29 +2,21 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_diciplinas"
-            android:icon="@drawable/ic_disciplina_black"
-            android:title="Disciplinas"
+            android:id="@+id/nav_pedidos"
+            android:icon="@drawable/pedido_mao"
+            android:title="Pedidos"
             android:checked="true"/>
 
         <item
-            android:id="@+id/nav_forum"
-            android:icon="@drawable/ic_forum_black"
-            android:title="Fórum" />
+            android:id="@+id/nav_cancelarPedido"
+            android:icon="@drawable/cancelar"
+            android:title="Cancelar Pedido" />
 
         <item
-            android:id="@+id/nav_mensagens"
-            android:icon="@drawable/ic_chat_black"
-            android:title="Mensagens" />
+            android:id="@+id/nav_solicitacoes"
+            android:icon="@drawable/solicitacao"
+            android:title="solicitações" />
 
-        <item
-            android:id="@+id/nav_localizacao"
-            android:icon="@drawable/ic_local_black"
-            android:title="Localização" />
-
-        <item
-            android:id="@+id/nav_config"
-            android:icon="@drawable/ic_configuracoes_black"
-            android:title="Configurações" />
+       
     </group>
 </menu>

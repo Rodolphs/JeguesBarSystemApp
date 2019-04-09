@@ -31,11 +31,7 @@ class TelaInicialActivity : DebugActivity(), NavigationView.OnNavigationItemSele
         // recuperar o parâmetro do tipo String
         val nome = args.getString("nome")
 
-        // recuperar parâmetro simplificado
-        val numero = intent.getIntExtra("nome",0)
-
         Toast.makeText(context, "Parâmetro: $nome", Toast.LENGTH_LONG).show()
-        Toast.makeText(context, "Numero: $numero", Toast.LENGTH_LONG).show()
 
         val mensagem = findViewById<TextView>(R.id.mensagemInicial)
         mensagem.text = "Bem vindo $nome"
@@ -77,25 +73,18 @@ class TelaInicialActivity : DebugActivity(), NavigationView.OnNavigationItemSele
     // para tratar os eventos de clique no menu lateral
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
-            R.id.nav_diciplinas -> {
-                Toast.makeText(this, "Clicou Disciplinas", Toast.LENGTH_SHORT).show()
+            R.id.nav_pedidos -> {
+                Toast.makeText(this, "Clicou Pedidos", Toast.LENGTH_SHORT).show()
             }
 
-            R.id.nav_mensagens -> {
-                Toast.makeText(this, "Clicou Mensagens", Toast.LENGTH_SHORT).show()
+            R.id.nav_cancelarPedido -> {
+                Toast.makeText(this, "Clicou em cacelar pedido", Toast.LENGTH_SHORT).show()
             }
 
-            R.id.nav_forum -> {
-                Toast.makeText(this, "Clicou Forum", Toast.LENGTH_SHORT).show()
+            R.id.nav_solicitacoes -> {
+                Toast.makeText(this, "Clicou solicitação", Toast.LENGTH_SHORT).show()
             }
 
-            R.id.nav_localizacao -> {
-                Toast.makeText(this, "Clicou Localização", Toast.LENGTH_SHORT).show()
-            }
-
-            R.id.nav_config -> {
-                Toast.makeText(this, "Clicou Config", Toast.LENGTH_SHORT).show()
-            }
         }
 
         // fecha menu depois de tratar o evento
@@ -106,7 +95,7 @@ class TelaInicialActivity : DebugActivity(), NavigationView.OnNavigationItemSele
 
     fun cliqueSair() {
         val returnIntent = Intent();
-        returnIntent.putExtra("result","Saída do BrewerApp");
+        returnIntent.putExtra("result","Saída da tela de pedido");
         setResult(Activity.RESULT_OK,returnIntent);
         finish();
     }
